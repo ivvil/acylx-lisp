@@ -6,9 +6,10 @@
   :license  "GPL V3"
   :version "0.0.1"
   :serial t
-  :pathname "src"
   :depends-on (#:spinneret
 			   #:parenscript
-			   #:clack)
+			   #:clack
+			   #:lass)
   :components ((:file "package")
-			   (:file "acylx")))
+			   (:file "acylx")
+			   (:file "css")))
