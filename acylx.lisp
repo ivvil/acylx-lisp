@@ -2,7 +2,7 @@
 
 (in-package #:acylx-lisp)
 
-(defun acylx-head (title)
+<(defun acylx-head (title)
   (spinneret:with-html
 	(:title title)
 	;; (:link :rel "icon" :type "image/x-icon" :href "/assets/favicon.png")
@@ -19,7 +19,7 @@
 	 (:html
 	  (:head
 	   (acylx-head "SHFT.dev")
-	   :style lass:compile-and-write (*main-css*))
+	   (:style (lass:compile-and-write *main-css*)))
 	  (:body
 	   ,@body))))
 

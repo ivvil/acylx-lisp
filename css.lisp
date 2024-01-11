@@ -3,7 +3,10 @@
 (in-package #:acylx-lisp)
 
 (defparameter *main-css*
-  '((html
-	 :background-color "red")
-	(h1
-	 :color "blue")))
+  '(body
+	:background-color "red"
+	(ul
+	 :list-style none
+	 (li
+	  :margin 0 :padding 0
+	  :display inline-block))))
