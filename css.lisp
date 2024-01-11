@@ -4,9 +4,35 @@
 
 (defparameter *main-css*
   '(body
-	:background-color "red"
-	(ul
-	 :list-style none
-	 (li
-	  :margin 0 :padding 0
-	  :display inline-block))))
+	:background-color "red"))
+
+;; @font-face {
+;; 	font-family: "Starbirl";
+;; 	src: url(assets/fonts/Starbirl.otf);
+;; }
+
+(defparameter *font-css*
+  '(:font-face))
+
+(defun cut-string-at-dot (input-string)
+  (if (position #\. input-string)
+      (subseq input-string 0 (position #\. input-string))
+      input-string))
+
+(defparameter *font-dir* #P"assets/fonts/")
+
+;; (defun get-fonts (path)
+;;   (dolist (file (uiop:directory-files path))
+;; 	(let ((name (cut-string-at-dot (file-namestring file))))
+;; 	  (add-font file name))))
+
+(defun get-fonts (path)
+  (loop for file in (uiop:directory-files path) collect (let ((name (cut-string-at-dot (file-namestring file))))
+														  (compile-and-write (add-font file name)))))
+
+;; TODO Return lass code instead of css
+;; TODO Return a string instead of an array of string
+;; TODO Use local paths instead of global paths
+
+(defun add-font (path name)
+  `(:font-face :font-family ,name :src ,(namestring path)))

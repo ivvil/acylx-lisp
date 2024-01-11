@@ -9,7 +9,8 @@
   :depends-on (#:spinneret
 			   #:parenscript
 			   #:clack
-			   #:lass)
+			   #:lass
+			   #:pathname-utils)
   :components ((:file "package")
 			   (:file "acylx")
 			   (:file "css")))

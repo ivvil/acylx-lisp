@@ -3,4 +3,5 @@
 (defpackage #:acylx-lisp
   (:use #:cl
 		#:spinneret
-		#:lass))
+		#:lass
+		#:pathname-utils))
