@@ -19,7 +19,7 @@
 	 (:html
 	  (:head
 	   (acylx-head "SHFT.dev")
-	   (:style (lass:compile-and-write *main-css*)))
+	   (:style (concatenate 'string (compile-and-write *main-css*) (apply 'concatenate 'string (get-fonts *font-dir*)))))
 	  (:body
 	   ,@body))))
 

@@ -4,7 +4,8 @@
 
 (defparameter *main-css*
   '(body
-	:background-color "red"))
+	:background-color "red"
+	:font-face "Starbirl"))
 
 ;; @font-face {
 ;; 	font-family: "Starbirl";
@@ -28,11 +29,11 @@
 
 (defun get-fonts (path)
   (loop for file in (uiop:directory-files path) collect (let ((name (cut-string-at-dot (file-namestring file))))
-														  (compile-and-write (add-font file name)))))
+																			  (compile-and-write (add-font file name)))))
 
 ;; TODO Return lass code instead of css
 ;; TODO Return a string instead of an array of string
 ;; TODO Use local paths instead of global paths
 
 (defun add-font (path name)
-  `(:font-face :font-family ,name :src ,(namestring path)))
+  `(:font-face :font-family ,name :src (url ,(namestring path))))
