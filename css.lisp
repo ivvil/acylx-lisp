@@ -29,7 +29,7 @@
 
 (defun get-fonts (path)
   (loop for file in (uiop:directory-files path) collect (let ((name (cut-string-at-dot (file-namestring file))))
-																			  (compile-and-write (add-font file name)))))
+																			  (lass:compile-and-write (add-font file name)))))
 
 ;; TODO Return lass code instead of css
 ;; TODO Return a string instead of an array of string
